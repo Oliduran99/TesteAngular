@@ -1,0 +1,704 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0048)https://msdn.microsoft.com/library/ms182240.aspx -->
+<!DOCTYPE html PUBLIC "" ""><HTML lang="pt" dir="ltr" xmlns="http://www.w3.org/1999/xhtml"><HEAD><META 
+content="IE=11.0000" http-equiv="X-UA-Compatible">
+<LINK href="https://msdn.microsoft.com/pt-br/library/ms182240.aspx" rel="canonical"> 
+    
+<META http-equiv="Content-Type" 
+content="text/html; charset=utf-8"><TITLE>CA1709: os identificadores do recurso 
+devem ter maiúsculas e minúsculas corretas</TITLE> 
+<META name="DCS.dcsuri" content="/pt-br/library/ms182240(d=default,l=pt-br,v=vs.140).aspx"> 
+<META name="NormalizedUrl" content="https://msdn.microsoft.com/pt-br/library/ms182240(d=default,l=pt-br,v=vs.140).aspx"> 
+<META name="ms.normalizedurl" content="https://msdn.microsoft.com/pt-br/library/ms182240(d=default,l=pt-br,v=vs.140).aspx"> 
+<META name="ms.prod" content="visual-studio-dev14"> 
+<META name="ms.devlang" content="na"> 
+<META name="ms.topic" content="article"> 
+<META name="AmbientContext" content='{"layout.limit_max_width":true,"AmbientContextId":"A64FE0D3-4AEC-44E1-95B4-D9EB8C3C3434","display.use_large_font":true,"insight.perf_timing":true,"AmbientContextDownstream":{"LogTrace":false},"display.high_contrast":false,"insight.use_wedcs_vnext":true}'> 
+<META name="VotingContextUrl" content="https://msdn.microsoft.com/pt-br/library/ms182240(d=default,l=pt-br,v=vs.140).aspx"> 
+<META name="MN" content="FB361394-12:51:27 PM"> 
+<META name="Search.ShortId" content="ms182240"> 
+<META name="ms.shortidmsdn" content="ms182240"> 
+<META name="ms.locale" content="pt-br"> 
+<META name="ms.prodver" content="VS.140"> 
+<META name="ms.contentlang" content="PT"> 
+<META name="ms.lang" content="PT"> 
+<META name="ms.loc" content="BR"> 
+<META name="ms.sitever" content="2016.07.15.1"> 
+<META name="ms.assetid" content="f633d1a7-4ca4-40ae-b207-ec571c5fb083"> 
+<META name="ms.auth" content="0"> 
+<META name="ms.technology" content="vs-devops-test"> 
+<META name="viewport" content="width=device-width, initial-scale=1.0">           
+          
+<SCRIPT type="text/javascript" data-do-not-move="true">
+        //<![CDATA[
+        var AmbientContext = null;
+
+        (function(){
+            var root = (function(){return this;}).call(null);
+
+            var GetCookie = function(name){
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos)))
+                    {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function(content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch(ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+    </SCRIPT>
+     
+<SCRIPT src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript" data-do-not-move="true" data-provides="jQuery"></SCRIPT>
+     <LINK href="CA1709%20os%20identificadores%20do%20recurso%20devem%20ter%20maiúsculas%20e%20minúsculas%20corretas_arquivos/Combined.css" 
+rel="stylesheet" type="text/css">
+<META name="GENERATOR" content="MSHTML 11.00.10586.494"></HEAD> 
+<BODY class="library IE IE11">
+<DIV id="page"><LINK rel="stylesheet" type="text/css">                         
+<INPUT id="isHeaderBleeding" type="hidden" value="true">     
+<DIV class="ltr msdn" id="ux-header" dir="ltr"><HEADER><SPAN 
+id="singleCol"></SPAN>         <SPAN id="doubleCol"></SPAN>         <SPAN id="isMobile"></SPAN>
+<DIV>
+<DIV class="row topRow">
+<DIV class="top">
+<DIV class="left"><A title="MSDN home" class="msdnLogoImg" href="https://msdn.microsoft.com/pt-br">
+<DIV class="msft-logo" id="msft-logo"></DIV></A>                 
+<DIV class="GrayPipe"></DIV><A class="DevCenterFullNameNonMegaBlade" href="https://msdn.microsoft.com/pt-br">Developer 
+Network</A>                 <A class="DevCenterFullName" href="https://msdn.microsoft.com/pt-br">Developer 
+Network</A>                 <A class="DevCenterShortName" href="https://msdn.microsoft.com/pt-br">Developer</A> 
+              </DIV>
+<DIV class="right">
+<DIV id="signIn">
+<DIV class="profileImage"></DIV><A class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1469217087&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fpt-br%2flibrary%2fms182240.aspx&amp;lc=1046&amp;id=254354&amp;mkt=pt-br">Entrar</A></DIV>
+<DIV class="auxNav">
+<DIV>
+<DIV id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml" 
+data-fragmentname="Subscriptions"><A id="Subscriptions_2153_1" href="https://msdn.microsoft.com/subscriptions/manage/hh442900" 
+xmlns="http://www.w3.org/1999/xhtml"><SPAN style="line-height: 18px;" 
+xmlns="">Assinaturas do MSDN</SPAN>   </A> </DIV>
+<DIV id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml" 
+data-fragmentname="GetTools"><A id="GetTools_2153_3" href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x416&amp;slcid=0x416&amp;campaign=o~msft~msdn~gettools-header~dn308572" 
+xmlns="http://www.w3.org/1999/xhtml"><SPAN style="line-height: 18px;" 
+xmlns="">Obter ferramentas</SPAN>   </A> </DIV></DIV>
+<DIV>
+<DIV id="Fragment_SocialLinks" xmlns="http://www.w3.org/1999/xhtml" 
+data-fragmentname="SocialLinks">
+<DIV class="linkList">
+<UL class="links horizontal">
+  <LI><A class="facebook" id="SocialLinks_2152_4" href="http://www.facebook.com/microsoftdeveloper" 
+  target="_blank" 
+  xmlns="http://www.w3.org/1999/xhtml">http://www.facebook.com/microsoftdeveloper</A> 
+        </LI>
+  <LI><A class="twitter" id="SocialLinks_2152_5" href="https://twitter.com/msdev" 
+  target="_blank" 
+  xmlns="http://www.w3.org/1999/xhtml">https://twitter.com/msdev</A>       </LI>
+  <LI><A class="googlePlus" id="SocialLinks_2152_6" href="http://plus.google.com/111221966647232053570/" 
+  target="_blank" 
+  xmlns="http://www.w3.org/1999/xhtml">http://plus.google.com/111221966647232053570/</A> 
+        </LI></UL></DIV></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV class="row middleRow">
+<DIV class="expandTop">
+<DIV class="left"></DIV>
+<DIV class="right"></DIV></DIV></DIV></DIV>
+<DIV class="bg_default" id="buttomRowWrapper">
+<DIV class="row buttomRow bg_default">
+<DIV class="bottom">
+<DIV class="left"><A class="menu-icon" id="grip" href="javascript:void(0)"></A>  
+                               
+<DIV id="drawer">
+<DIV class="toc"><NAV>
+<UL class="navL1">
+  <LI class="inactive toggle"><A href="javascript:void(0)">Tecnologias</A>
+  <UL class="navL2">
+    <LI class="inactive"><A title="Nuvem" href="https://msdn.microsoft.com/cloud-app-development-msdn">Nuvem</A></LI>
+    <LI class="inactive"><A title="Desenvolvimento de aplicativos" href="https://msdn.microsoft.com/app-development-msdn">Desenvolvimento 
+    de aplicativos</A></LI>
+    <LI class="inactive"><A title="Web" href="https://msdn.microsoft.com/web-app-development-msdn">Web</A></LI>
+    <LI class="inactive"><A title="Dados" href="https://msdn.microsoft.com/big-data-development-msdn">Dados</A></LI>
+    <LI class="inactive"><A title="Jogos" href="https://msdn.microsoft.com/games-development-msdn">Jogos</A></LI>
+    <LI class="inactive"><A title="Internet das coisas" href="https://msdn.microsoft.com/internetofthings">Internet 
+    das coisas</A></LI></UL></LI>
+  <LI class="inactive toggle"><A href="javascript:void(0)">Downloads</A>
+  <UL class="navL2">
+    <LI class="inactive"><A title="Visual Studio" href="https://www.visualstudio.com/downloads/download-visual-studio-vs">Visual 
+    Studio</A></LI>
+    <LI class="inactive"><A title="Acesso à assinatura MSDN" href="https://msdn.microsoft.com/subscriptions/">Acesso 
+    à assinatura MSDN</A></LI>
+    <LI class="inactive"><A title="SDKs" href="https://msdn.microsoft.com/microsoft-sdks-msdn">SDKs</A></LI>
+    <LI class="inactive toggle"><A title="Software de avaliação" href="javascript:void(0)">Software 
+    de avaliação</A>
+    <UL class="navL3">
+      <LI class="inactive"><A title="Downloads gratuitos" href="https://msdn.microsoft.com/evalcenter">Downloads 
+      gratuitos</A></LI>
+      <LI class="inactive"><A title="Recursos do Office" href="https://msdn.microsoft.com/officeevaluationresources">Recursos 
+      do Office</A></LI>
+      <LI class="inactive"><A title="Recursos do SharePoint Server 2013" href="https://msdn.microsoft.com/sharepoint2013resources">Recursos 
+      do SharePoint Server 2013</A></LI>
+      <LI class="inactive"><A title="Recursos do SQL Server 2014 Express" href="https://msdn.microsoft.com/sqlserver2014expressresources">Recursos 
+      do SQL Server 2014 Express</A></LI>
+      <LI class="inactive"><A title="Recursos do Windows Server 2012" href="https://msdn.microsoft.com/windowsserver2012r2resources">Recursos 
+      do Windows Server 2012</A></LI></UL></LI></UL></LI>
+  <LI class="inactive toggle"><A href="javascript:void(0)">Programas</A>
+  <UL class="navL2">
+    <LI class="inactive toggle"><A title="Assinaturas do MSDN" href="javascript:void(0)">Assinaturas 
+    do MSDN</A>
+    <UL class="navL3">
+      <LI class="inactive"><A title="Visão geral" href="https://msdn.microsoft.com/msdn-subscriptions-overview">Visão 
+      geral</A></LI>
+      <LI class="inactive"><A title="Benefícios" href="https://msdn.microsoft.com/benefits-overview">Benefícios</A></LI>
+      <LI class="inactive"><A title="Administradores" href="https://msdn.microsoft.com/msdn-subscriptions-administration">Administradores</A></LI></UL></LI>
+    <LI class="inactive toggle"><A title="Estudantes" 
+    href="javascript:void(0)">Estudantes</A>
+    <UL class="navL3">
+      <LI class="inactive"><A title="Microsoft Imagine" href="https://msdn.microsoft.com/imagine/imagine-home">Microsoft 
+      Imagine</A></LI>
+      <LI class="inactive"><A title="Microsoft Student Partners" href="https://msdn.microsoft.com/microsoftstudentpartners">Microsoft 
+      Student Partners</A></LI></UL></LI>
+    <LI class="inactive toggle"><A title="Architects" 
+    href="javascript:void(0)">Architects</A>
+    <UL class="navL3">
+      <LI class="inactive"><A title="Visão geral" href="https://msdn.microsoft.com/architects-overview-msdn">Visão 
+      geral</A></LI>
+      <LI class="inactive"><A title="Estudos de casos" href="https://msdn.microsoft.com/architects-case-studies-msdn">Estudos 
+      de casos</A></LI>
+      <LI class="inactive"><A title="Planos gráficos" href="https://msdn.microsoft.com/architects-blueprints-msdn">Planos 
+      gráficos</A></LI>
+      <LI class="inactive"><A title="Blog" href="http://blogs.msdn.com/b/msarchitecture/">Blog</A></LI>
+      <LI class="inactive"><A title="Fóruns" href="http://social.msdn.microsoft.com/forums/en-us/home?brandignore=true&amp;sort=relevancedesc&amp;searchterm=architecture+or+architect">Fóruns</A></LI></UL></LI>
+    <LI class="inactive"><A title="ISV" href="https://msdn.microsoft.com/applicationbuilder">ISV</A></LI>
+    <LI class="inactive"><A title="Startups" href="https://www.microsoft.com/bizspark">Startups</A></LI>
+    <LI class="inactive"><A title="TechRewards" href="https://rewards.msdn.microsoft.com/">TechRewards</A></LI>
+    <LI class="inactive"><A title="Eventos" href="http://events.msdn.microsoft.com/pt-br">Eventos</A></LI></UL></LI>
+  <LI class="inactive toggle"><A href="javascript:void(0)">Comunidade</A>
+  <UL class="navL2">
+    <LI class="inactive"><A title="Magazine" href="https://msdn.microsoft.com/magazine/dd767791">Magazine</A></LI>
+    <LI class="inactive"><A title="Fóruns" href="https://social.msdn.microsoft.com/forums/">Fóruns</A></LI>
+    <LI class="inactive"><A title="Blogs" href="https://blogs.msdn.microsoft.com/">Blogs</A></LI>
+    <LI class="inactive"><A title="Conselheiros técnicos" href="http://tech-advisors.msdn.microsoft.com/en-us">Conselheiros 
+    técnicos</A></LI>
+    <LI class="inactive"><A title="Channel 9 " 
+    href="http://channel9.msdn.com/">Channel 9 </A></LI></UL></LI>
+  <LI class="inactive current toggle"><A 
+  href="javascript:void(0)">Documentação</A>
+  <UL class="navL2">
+    <LI class="inactive current"><A title="APIs e referência" href="https://msdn.microsoft.com/library">APIs 
+    e referência</A></LI>
+    <LI class="inactive"><A title="Centros do desenvolvedor" href="https://msdn.microsoft.com/developer-centers-msdn">Centros 
+    do desenvolvedor</A></LI></UL></LI>
+  <LI class="inactive"><A 
+  href="https://code.msdn.microsoft.com/">Exemplos</A></LI></UL></NAV></DIV></DIV></DIV>
+<DIV class="right">
+<DIV id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml" 
+data-fragmentname="SearchBox">
+<DIV class="SearchBox">
+<FORM name="HeaderSearchForm" id="HeaderSearchForm" method="get"><BUTTON class="header-search-button" 
+id="FakeHeaderSearchButton" type="submit" value="Search">
+<DIV class="search-finder" id="search-finder"></DIV></BUTTON>       <BUTTON id="HeaderSearchButton" 
+style="display: none;"></BUTTON>       
+<DIV id="searchSplitter"></DIV>
+<DIV class="search-clear-x" id="searchCloseIcon"></DIV>
+<DIV id="searchTextContainer" style="width: 0px;"><INPUT name="query" id="HeaderSearchTextBox" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" type="text" maxlength="200"> 
+      </DIV></FORM></DIV></DIV></DIV></DIV></DIV></DIV></HEADER></DIV>
+<DIV id="jumpInfo" style="display: none;">Desculpe-nos. O conteúdo solicitado 
+foi removido. Você será redirecionado automaticamente em 1 segundo.</DIV><LINK 
+rel="stylesheet" type="text/css"> <LINK rel="stylesheet" type="text/css">     
+<DIV id="breadcrumbs" ms.cmpgrp="breadcrumbs" ms.pgarea="body">
+<DIV class="breadCrumb" id="breadcrumbDesktop"><SPAN 
+class="breadcrumbEllipsis"><A title="Analisando a qualidade do aplicativo" href="https://msdn.microsoft.com/pt-br/library/dd264897.aspx"></A></SPAN> 
+                        <SPAN><A title="Analisando a qualidade do código gerenciado" 
+href="https://msdn.microsoft.com/pt-br/library/dd264939.aspx"><SPAN>Analisando a 
+qualidade do código gerenciado</SPAN></A></SPAN>                         
+<SPAN><A title="Avisos da análise de código para código gerenciado" href="https://msdn.microsoft.com/pt-br/library/ee1hzekz.aspx"><SPAN>Avisos 
+da análise de código para código gerenciado</SPAN></A></SPAN>                    
+     <SPAN class="breadcrumbDropSmall"><A title="Avisos de nomenclatura" id="breadcrumbDropDownButton" 
+href="https://msdn.microsoft.com/library/ms182240.aspx#" targethref="https://msdn.microsoft.com/pt-br/library/ee1hzekz.aspx"><SPAN>Avisos 
+de nomenclatura</SPAN></A>                         </SPAN>         </DIV>
+<DIV id="breadcrumbDropDownMenu"></DIV>
+<DIV id="tocDropDownMenu"></DIV>
+<DIV class="breadCrumb" id="breadcrumbTablet"><SPAN 
+class="breadcrumbEllipsis"><A title="Avisos da análise de código para código gerenciado" 
+href="https://msdn.microsoft.com/pt-br/library/ee1hzekz.aspx"></A></SPAN>        
+             <SPAN><A title="Avisos de nomenclatura" href="https://msdn.microsoft.com/pt-br/library/ms182232.aspx"><SPAN>Avisos 
+de nomenclatura</SPAN></A></SPAN>                 <SPAN class="breadcrumbDropSmall"><A 
+title="CA1709: os identificadores do recurso devem ter maiúsculas e minúsculas corretas" 
+id="tocDropDownButton" 
+href="https://msdn.microsoft.com/library/ms182240.aspx#"><SPAN>CA1709: os 
+identificadores do recurso devem ter maiúsculas e minúsculas 
+corretas</SPAN></A></SPAN>         </DIV>
+<DIV class="breadCrumb" id="breadcrumbMobile"><SPAN 
+class="breadcrumbEllipsis"><A title="Avisos de nomenclatura" href="https://msdn.microsoft.com/pt-br/library/ms182232.aspx"></A></SPAN> 
+            <SPAN class="breadcrumbDropSmall"><A title="CA1709: os identificadores do recurso devem ter maiúsculas e minúsculas corretas" 
+id="tocPopupButton" 
+href="https://msdn.microsoft.com/library/ms182240.aspx#"><SPAN>CA1709: os 
+identificadores do recurso devem ter maiúsculas e minúsculas 
+corretas</SPAN></A></SPAN>         </DIV></DIV>
+<DIV id="tocPopupMenu">
+<DIV class="tocCloseLarge" id="tocPopMenuClose"></DIV>
+<DIV id="tocTitle">CA1709: os identificadores do recurso devem ter maiúsculas e 
+minúsculas corretas</DIV></DIV>
+<DIV id="body" ms.pgarea="body"><SPAN id="tabletView_large"></SPAN>             
+<SPAN id="tabletView_small"></SPAN>             <SPAN id="mobileView"></SPAN>    
+             
+<DIV id="leftNav" ms.cmpgrp="left toc">
+<DIV class="hide-archive ArchiveV2" id="tocnav">
+<DIV class="tocunselected">
+<DIV id="tocExpandArea"><SPAN class="toc_empty"></SPAN>             <SPAN id="tocExpandButton"><A 
+href="https://msdn.microsoft.com/library/ms182240.aspx#"></A></SPAN>         
+</DIV>
+<DIV id="tocExpand"></DIV></DIV>
+<DIV class="tocselected"></DIV>
+<DIV class="tocunselected">
+<DIV class="toclevel " data-toclevel="1"><A title="CA1700: não nomeie valores de enum como 'Reservados'" 
+href="https://msdn.microsoft.com/pt-br/library/ms182236.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1700: não nomeie valores de enum como 
+'Reservados'</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1701: as palavras compostas da cadeia de caracteres do recurso devem ter maiúsculas e minúsculas corretas" 
+href="https://msdn.microsoft.com/pt-br/library/bb264481.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1701: as palavras compostas da cadeia de 
+caracteres do recurso devem ter maiúsculas e minúsculas corretas</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1702: palavras compostas devem ter maiúsculas e minúsculas corretas" 
+href="https://msdn.microsoft.com/pt-br/library/bb264474.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1702: palavras compostas devem ter maiúsculas e 
+minúsculas corretas</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1703: as cadeias de caracteres do recurso devem ter a ortografia correta" 
+href="https://msdn.microsoft.com/pt-br/library/bb264483.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1703: as cadeias de caracteres do recurso devem 
+ter a ortografia correta</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1704: os identificadores do recurso devem ter a ortografia correta" 
+href="https://msdn.microsoft.com/pt-br/library/bb264492.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1704: os identificadores do recurso devem ter a 
+ortografia correta</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1707: os identificadores não devem conter sublinhados" 
+href="https://msdn.microsoft.com/pt-br/library/ms182245.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1707: os identificadores não devem conter 
+sublinhados</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1708: os identificadores devem ser diferentes além de maiúsculas de minúsculas" 
+href="https://msdn.microsoft.com/pt-br/library/ms182242.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1708: os identificadores devem ser diferentes 
+além de maiúsculas de minúsculas</A></DIV>
+<DIV class="toclevel current" data-toclevel="1"><A title="CA1709: os identificadores do recurso devem ter maiúsculas e minúsculas corretas" 
+href="https://msdn.microsoft.com/pt-br/library/ms182240.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1709: os identificadores do recurso devem ter 
+maiúsculas e minúsculas corretas</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1710: os identificadores devem ter o sufixo correto" 
+href="https://msdn.microsoft.com/pt-br/library/ms182244.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1710: os identificadores devem ter o sufixo 
+correto</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1711: os identificadores não devem ter sufixo incorreto" 
+href="https://msdn.microsoft.com/pt-br/library/ms182247.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1711: os identificadores não devem ter sufixo 
+incorreto</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1712: não use valores enum como prefixo com o nome do tipo" 
+href="https://msdn.microsoft.com/pt-br/library/ms182237.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1712: não use valores enum como prefixo com o 
+nome do tipo</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1713: os eventos não devem ter um prefixo anterior ou posterior" 
+href="https://msdn.microsoft.com/pt-br/library/ms182238.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1713: os eventos não devem ter um prefixo 
+anterior ou posterior</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1714: os enums de sinalizadores devem ter nomes plurais" 
+href="https://msdn.microsoft.com/pt-br/library/bb264486.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1714: os enums de sinalizadores devem ter nomes 
+plurais</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1715: os identificadores devem ter o prefixo correto" 
+href="https://msdn.microsoft.com/pt-br/library/ms182243.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1715: os identificadores devem ter o prefixo 
+correto</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1716: os identificadores não devem corresponder a palavras-chave" 
+href="https://msdn.microsoft.com/pt-br/library/ms182248.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1716: os identificadores não devem corresponder 
+a palavras-chave</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1717: apenas enums FlagsAttribute devem ter nomes plurais" 
+href="https://msdn.microsoft.com/pt-br/library/bb264487.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1717: apenas enums FlagsAttribute devem ter 
+nomes plurais</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1719: os nomes de parâmetro não devem corresponder aos nomes de membro" 
+href="https://msdn.microsoft.com/pt-br/library/ms182252.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1719: os nomes de parâmetro não devem 
+corresponder aos nomes de membro</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1720: os identificadores não devem conter nomes de tipo" 
+href="https://msdn.microsoft.com/pt-br/library/bb531486.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1720: os identificadores não devem conter nomes 
+de tipo</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1721: os nomes de propriedade não devem corresponder a métodos get" 
+href="https://msdn.microsoft.com/pt-br/library/ms182253.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1721: os nomes de propriedade não devem 
+corresponder a métodos get</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1722: os identificadores não devem ter prefixo incorreto" 
+href="https://msdn.microsoft.com/pt-br/library/ms182246.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1722: os identificadores não devem ter prefixo 
+incorreto</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1725: os nomes de parâmetro devem corresponder à declaração base" 
+href="https://msdn.microsoft.com/pt-br/library/ms182251.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1725: os nomes de parâmetro devem corresponder à 
+declaração base</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1724: os nomes de tipo não devem corresponder a namespaces" 
+href="https://msdn.microsoft.com/pt-br/library/ms182257.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1724: os nomes de tipo não devem corresponder a 
+namespaces</A></DIV>
+<DIV class="toclevel " data-toclevel="1"><A title="CA1726: usar termos preferenciais" 
+href="https://msdn.microsoft.com/pt-br/library/ms182258.aspx" mtpsshortid="" 
+mtpsassetid="" mtpsaliasid="">CA1726: usar termos 
+preferenciais</A></DIV></DIV><A id="tocMenuToggler" href="https://msdn.microsoft.com/library/ms182240.aspx#"><SPAN 
+class="tocMenuCollapse" id="tocMenuTogglerIcon"></SPAN>         
+<DIV id="tocMenuTogglerLabel">TOC</DIV></A> </DIV>
+<DIV style="display: none;">
+<DIV id="CollapseLocalizeString">Recolher sumário</DIV>
+<DIV id="ExpandLocalizeString">Expandir sumário</DIV></DIV>
+<DIV><A id="isd_archiveControlResponsive" style="display: none;" 
+data-exclude-archive="Ocultar versões arquivadas" data-include-archive="Mostrar versões arquivadas"></A> 
+            
+<DIV id="isd_archiveInstrument" style="display: none;">O documento está 
+arquivado e as informações podem estar desatualizadas</DIV></DIV></DIV>
+<DIV class="content" id="content" ms.cmpgrp="content body">
+<DIV id="archiveDisclaimerText" style="display: none;">O documento está 
+arquivado e as informações podem estar desatualizadas</DIV>
+<DIV xmlns="http://www.w3.org/1999/xhtml">
+<DIV class="topic">
+<H1 class="title">CA1709: os identificadores do recurso devem ter maiúsculas e 
+minúsculas corretas</H1>
+<DIV class="lw_vs">
+<DIV id="curversion"><STRONG>                Visual Studio 2015              
+</STRONG>       </DIV>
+<DIV id="versionclick">
+<DIV class="cl_lw_vs_seperator" id="vsseperator"></DIV>
+<DIV>
+<DIV><A id="vsLink" href="javascript:;">                        Outras versões   
+                  </A>           </DIV>
+<DIV class="cl_vs_arrow clip10x10"><IMG class="cl_lw_vs_arrow" id="vsArrow" alt="" 
+src="CA1709%20os%20identificadores%20do%20recurso%20devem%20ter%20maiúsculas%20e%20minúsculas%20corretas_arquivos/ImageSprite.png"> 
+          </DIV></DIV>
+<UL id="vsPanel">
+  <LI><A 
+  href="https://msdn.microsoft.com/pt-br/library/ms182240(v=vs.120).aspx">Visual 
+  Studio 2013 </A>           </LI>
+  <LI><A 
+  href="https://msdn.microsoft.com/pt-br/library/ms182240(v=vs.110).aspx">Visual 
+  Studio 2012</A>           </LI>
+  <LI><A 
+  href="https://msdn.microsoft.com/pt-br/library/ms182240(v=vs.100).aspx">Visual 
+  Studio 2010</A>           </LI>
+  <LI class="archived"><A href="https://msdn.microsoft.com/pt-br/library/ms182240(v=vs.90).aspx">Visual 
+  Studio 2008</A>           </LI>
+  <LI class="archived"><A href="https://msdn.microsoft.com/pt-br/library/ms182240(v=vs.80).aspx">Visual 
+  Studio 2005</A>           </LI></UL></DIV></DIV>
+<DIV style="clear: both;"></DIV>
+<DIV id="mainSection">
+<DIV id="mainBody">&nbsp;
+<DIV class="introduction">
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <P>              TypeName             </P></TD>
+    <TD>
+      <P>              IdentifiersShouldBeCasedCorrectly             </P></TD></TR>
+  <TR>
+    <TD>
+      <P>              CheckId             </P></TD>
+    <TD>
+      <P>              CA1709             </P></TD></TR>
+  <TR>
+    <TD>
+      <P>              Categoria             </P></TD>
+    <TD>
+      <P>              Microsoft.Naming             </P></TD></TR>
+  <TR>
+    <TD>
+      <P>              Alteração Significativa             </P></TD>
+    <TD>
+      <P>              Interrompendo - se for gerado em assemblies, nos 
+      namespaces, tipos, membros e parâmetros.             </P>
+      <P>              Sem-quebras - quando é acionado em parâmetros de tipo 
+      genéricas.             </P></TD></TR></TBODY></TABLE></DIV>
+<DIV>
+<H2 class="LW_CollapsibleArea_TitleDiv">
+<DIV><A title="Recolher" class="LW_CollapsibleArea_TitleAhref" role="button" 
+href="javascript:void(0)"><SPAN class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></SPAN><SPAN 
+class="LW_CollapsibleArea_Title">Causa</SPAN></A>
+<DIV class="LW_CollapsibleArea_Anchor_Div" id="Anchor_0"><A title="Clique com o botão direito do mouse para copiar e compartilhar o link desta seção" 
+class="LW_CollapsibleArea_Anchor_Img" href="https://msdn.microsoft.com/library/ms182240.aspx#Anchor_0"></A></DIV>
+<DIV class="LW_CollapsibleArea_HrDiv">
+<HR class="LW_CollapsibleArea_Hr">
+</DIV></DIV></H2>
+<DIV class="sectionblock">
+<DIV class="section">
+<P>        O nome de um identificador não é encaixotado corretamente.       </P>
+<P>        - ou -       </P>
+<P>        O nome de um identificador contiver um acrônimo de duas letras e a 
+segunda letra é minúsculos.        </P>
+<P>        - ou -       </P>
+<P>        O nome de um identificador contiver um acrônimo de três ou mais 
+letras maiúsculas.       </P></DIV></DIV></DIV>
+<DIV>
+<H2 class="LW_CollapsibleArea_TitleDiv">
+<DIV><A title="Recolher" class="LW_CollapsibleArea_TitleAhref" role="button" 
+href="javascript:void(0)"><SPAN class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></SPAN><SPAN 
+class="LW_CollapsibleArea_Title">Descrição da Regra</SPAN></A>
+<DIV class="LW_CollapsibleArea_Anchor_Div" id="Anchor_1"><A title="Clique com o botão direito do mouse para copiar e compartilhar o link desta seção" 
+class="LW_CollapsibleArea_Anchor_Img" href="https://msdn.microsoft.com/library/ms182240.aspx#Anchor_1"></A></DIV>
+<DIV class="LW_CollapsibleArea_HrDiv">
+<HR class="LW_CollapsibleArea_Hr">
+</DIV></DIV></H2>
+<DIV class="sectionblock">
+<DIV class="section">
+<P>        Convenções de nomenclatura dão uma aparência comum para bibliotecas 
+que tem como foco o common language runtime.  Isto reduz a curva de aprendizado 
+que é necessária para novas bibliotecas de software, e aumenta confiança dos 
+clientes de que a biblioteca foi desenvolvida por alguém que com experiência 
+programar código gerenciado.  </P>
+<P>        Por convenção, caixas de camelo o uso de nomes de parâmetros; o 
+namespace, digite e, os nomes de membro usam o uso de maiúsculas e minúsculas de 
+Pascal.  Em um nome camelo- encaixotado, a primeira letra minúscula é, e a 
+primeira letra de todas as palavras restantes no nome está em maiúsculas.  
+Exemplos de nomes camelo- boxed são “packetSniffer”, “ioFile”, e 
+“fatalErrorCode”.  Em um nome Pascal- encaixotado, a primeira letra maiúscula é, 
+e a primeira letra de todas as palavras restantes no nome está em maiúsculas.  
+Exemplos de nomes Pascal- boxed são “PacketSniffer”, “IOFile”, e 
+“FatalErrorCode”.  </P>
+<P>Essa regra se divide o nome na palavra com base em minúsculas e verifica 
+todas as palavras de duas letras em uma lista de palavras de duas letras comuns, 
+como “em” ou “my”.  Se não for encontrada uma correspondência, as palavras são 
+consideradas um acrônimo.  Além disso, esta regra assumir-las encontrou um 
+acrônimo quando o nome contiver quatro letras maiúsculas em uma linha ou três 
+letras maiúsculas em uma linha no final do nome.  </P>
+<P>        Por convenção, os acrônimos de duas letras usam letras maiúsculas, e 
+acrônimos de três ou mais caracteres use as caixas de Pascal.  Os exemplos a 
+seguir usam essa convenção de nomenclatura: “DB”, “CR”, “Cpa”, e “Ecma”.  Os 
+exemplos violam a convenção: “Io”, “XML”, e “DoD”, e para nomes de nonparameter, 
+“XP” e “completo”.  </P>
+<P>O “ID” especial é encaixotado para causar uma violação desta regra. A “ID” 
+não é um acrônimo mas é uma abreviação para “ID”.       </P></DIV></DIV></DIV>
+<DIV>
+<H2 class="LW_CollapsibleArea_TitleDiv">
+<DIV><A title="Recolher" class="LW_CollapsibleArea_TitleAhref" role="button" 
+href="javascript:void(0)"><SPAN class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></SPAN><SPAN 
+class="LW_CollapsibleArea_Title">Como Corrigir Violações</SPAN></A>
+<DIV class="LW_CollapsibleArea_Anchor_Div" id="Anchor_2"><A title="Clique com o botão direito do mouse para copiar e compartilhar o link desta seção" 
+class="LW_CollapsibleArea_Anchor_Img" href="https://msdn.microsoft.com/library/ms182240.aspx#Anchor_2"></A></DIV>
+<DIV class="LW_CollapsibleArea_HrDiv">
+<HR class="LW_CollapsibleArea_Hr">
+</DIV></DIV></H2>
+<DIV class="sectionblock">
+<DIV class="section">
+<P>        Altere o nome de modo que fique capitalizado corretamente.       
+</P></DIV></DIV></DIV>
+<DIV>
+<H2 class="LW_CollapsibleArea_TitleDiv">
+<DIV><A title="Recolher" class="LW_CollapsibleArea_TitleAhref" role="button" 
+href="javascript:void(0)"><SPAN class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></SPAN><SPAN 
+class="LW_CollapsibleArea_Title">Quando Suprimir Alertas</SPAN></A>
+<DIV class="LW_CollapsibleArea_Anchor_Div" id="Anchor_3"><A title="Clique com o botão direito do mouse para copiar e compartilhar o link desta seção" 
+class="LW_CollapsibleArea_Anchor_Img" href="https://msdn.microsoft.com/library/ms182240.aspx#Anchor_3"></A></DIV>
+<DIV class="LW_CollapsibleArea_HrDiv">
+<HR class="LW_CollapsibleArea_Hr">
+</DIV></DIV></H2>
+<DIV class="sectionblock">
+<DIV class="section">
+<P>        É seguro suprimir esse aviso se você tem suas próprias convenções de 
+nomenclatura, ou se o identificador representa um nome apropriado, por exemplo, 
+o nome de uma empresa ou tecnologia.       </P>
+<P>        Você também pode adicionar termos, abreviações, e os acrônimos 
+específicos que a um dicionário personalizado do código.  Os termos 
+especificados no dicionário personalizado não causará violações desta regra.  
+Para obter mais informações, consulte <A href="https://msdn.microsoft.com/pt-br/library/bb514188.aspx">Como 
+personalizar o dicionário de análise do código</A>  </P></DIV></DIV></DIV>
+<DIV>
+<H2 class="LW_CollapsibleArea_TitleDiv">
+<DIV><A title="Recolher" class="LW_CollapsibleArea_TitleAhref" role="button" 
+href="javascript:void(0)"><SPAN class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></SPAN><SPAN 
+class="LW_CollapsibleArea_Title">Regras Relacionadas</SPAN></A>
+<DIV class="LW_CollapsibleArea_Anchor_Div" id="Anchor_4"><A title="Clique com o botão direito do mouse para copiar e compartilhar o link desta seção" 
+class="LW_CollapsibleArea_Anchor_Img" href="https://msdn.microsoft.com/library/ms182240.aspx#Anchor_4"></A></DIV>
+<DIV class="LW_CollapsibleArea_HrDiv">
+<HR class="LW_CollapsibleArea_Hr">
+</DIV></DIV></H2>
+<DIV class="sectionblock">
+<DIV class="section">
+<P><A href="https://msdn.microsoft.com/pt-br/library/ms182242.aspx">CA1708: os 
+identificadores devem ser diferentes além de maiúsculas de minúsculas</A>       
+</P></DIV></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV class="libraryMemberFilter">
+<DIV class="filterContainer"><SPAN>Mostrar:</SPAN>         <LABEL><INPUT class="libraryFilterInherited" 
+type="checkbox" checked="checked" value="Inherit">Herdado         </LABEL>       
+  <LABEL><INPUT class="libraryFilterProtected" type="checkbox" checked="checked" 
+value="Protected">Protegido         </LABEL>     </DIV></DIV><INPUT id="libraryMemberFilterEmptyWarning" type="hidden" value="Não há membros disponíveis com suas configurações de filtro atuais."> 
+    </DIV>
+<DIV id="rightNavigationMenu" ms.cmpgrp="right nav">
+<DIV id="mobileButtons">
+<DIV id="navigationButtons"><A id="isd_print" href="https://msdn.microsoft.com/pt-br/library/ms182240(d=printer).aspx" 
+rel="nofollow"><INS class="print"></INS>Imprimir </A><A id="isd_printABook" 
+href="https://msdn.microsoft.com/pt-br/library/export/help/?returnurl=%2fpt-br%2flibrary%2fms182240.aspx"><INS 
+class="export"></INS>Exportar (<SPAN class="count">0</SPAN>)             </A>    
+     </DIV></DIV>
+<DIV id="navMain">
+<DIV id="closeNavigation"><A class="tocCloseSmall" id="closeButton"></A></DIV>
+<DIV id="navigationButtons"><A id="isd_print" href="https://msdn.microsoft.com/pt-br/library/ms182240(d=printer).aspx" 
+rel="nofollow"><INS class="print"></INS>Imprimir </A><A id="isd_printABook2" 
+href="https://msdn.microsoft.com/pt-br/library/export/help/?returnurl=%2fpt-br%2flibrary%2fms182240.aspx"><INS 
+class="export"></INS>Exportar (<SPAN class="count">0</SPAN>)             </A><A 
+id="isdShare" href="https://msdn.microsoft.com/library/ms182240.aspx#"><INS 
+class="share"></INS>Compartilhar             </A>
+<DIV id="socials" style="display: none;"><A class="isdFacebook" href="https://msdn.microsoft.com/library/ms182240.aspx#"><INS 
+class="facebook"></INS></A>                 <A class="isdTwitter" href="https://msdn.microsoft.com/library/ms182240.aspx#"><INS 
+class="twitter"></INS></A>                 <A class="isdGooglePlus" href="https://msdn.microsoft.com/library/ms182240.aspx#"><INS 
+class="googlePlus"></INS></A>             </DIV></DIV>
+<DIV id="indoc_toc" style="display: none;" ms.cmpgrp="indoc toc">
+<DIV id="indoc_title">NESTE ARTIGO</DIV>
+<UL id="indoc_toclist"></UL></DIV></DIV></DIV>
+<DIV class="rightNavigationMenuThumbnail" 
+id="rightNavigationMenuThumbnail"></DIV></DIV>
+<DIV 
+class="clear"></DIV><INPUT name="__RequestVerificationToken" type="hidden" value="3RTaq5c7ebB-jk6IraJ2E4Nnku1enGDNRjZpCpsFu3_8R0Y1tUabQlQIYIYfBMTP3qWFcNKzNITTKbei0xsEqKXskRE1"> 
+<INPUT id="ratingValueSubmitUrl" type="hidden" value="https://msdn.microsoft.com/pt-br/library/feedback/rate/ms182240.aspx"> 
+<INPUT id="ratingAdditionalSubmitUrl" type="hidden" value="https://msdn.microsoft.com/pt-br/library/feedback/additional/ms182240.aspx"> 
+<INPUT id="isTopicRated" type="hidden" value="false">     
+<DIV id="lib-footer"><LINK rel="stylesheet" type="text/css">                 
+<DIV id="ux-footer" dir="ltr">
+<DIV class="clear stdr-container-before" id="standardRatingBefore"></DIV>
+<DIV class="stdr-container" id="standardRating" ms.pgarea="body">
+<DIV class="stdr-close"></DIV>
+<DIV class="stdr-vote stdr-content">
+<DIV class="stdr-content"><SPAN class="stdr-votetitle">Esta página é 
+útil?</SPAN><BUTTON class="stdr-yes" 
+aria-label="Sim, esta página foi útil">Sim</BUTTON>                 <BUTTON 
+class="stdr-no" aria-label="Não, esta página não foi útil">Não</BUTTON>          
+       <INPUT id="s_ratingValue" type="hidden">             </DIV></DIV>
+<DIV class="stdr-feedback" style="display: none;">
+<DIV class="stdr-form">
+<DIV class="stdr-fieldtitle">Comentários adicionais?</DIV><TEXTAREA class="stdr-detail" maxlength="1500" rows="6"></TEXTAREA> 
+                
+<DIV><SPAN class="stdr-count"><SPAN class="stdr-charcnt">1500</SPAN> caracteres 
+restantes</SPAN>                     
+<DIV class="stdr-buttons"><BUTTON class="stdr-provide" aria-label="Enviar comentários adicionais">Enviar</BUTTON> 
+                        <BUTTON class="stdr-skip" aria-label="Ignorar comentários adicionais">Ignorar</BUTTON> 
+                    </DIV></DIV>
+<DIV class="clear"></DIV></DIV></DIV>
+<DIV class="stdr-thanks" style="display: none;">
+<DIV class="stdr-content"><SPAN class="stdr-thankyou">Obrigado!</SPAN>           
+      <SPAN class="stdr-appreciate">Agradecemos seus comentários.</SPAN>         
+    </DIV></DIV>
+<DIV id="contentFeedbackQAContainer" style="display: none;"></DIV></DIV>
+<DIV id="standardRatingPlaceholder" style="display: none;"></DIV><FOOTER class="top">
+<DIV id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml" 
+data-fragmentname="LeftLinks">
+<DIV class="linkList">
+<DIV class="linkListTitle">Centros do desenvolvedor</DIV>
+<UL class="links">
+  <LI><A class="windowsBlue" id="LeftLinks_2148_1" href="https://dev.windows.com/" 
+  xmlns="http://www.w3.org/1999/xhtml">Windows</A>       </LI>
+  <LI><A class="office" id="LeftLinks_2148_3" href="http://dev.office.com/" 
+  xmlns="http://www.w3.org/1999/xhtml">Office</A>       </LI>
+  <LI><A class="visualStudio" id="LeftLinks_2148_4" href="https://msdn.microsoft.com/vstudio" 
+  xmlns="http://www.w3.org/1999/xhtml">Visual Studio</A>       </LI>
+  <LI><A id="LeftLinks_2148_12" href="http://azure.microsoft.com/pt-br/documentation/" 
+  target="_blank" xmlns="http://www.w3.org/1999/xhtml">Microsoft Azure</A>       
+  </LI>
+  <LI><A id="LeftLinks_2148_5" href="https://msdn.microsoft.com/developer-centers-msdn" 
+  xmlns="http://www.w3.org/1999/xhtml">Mais...</A>       </LI></UL></DIV></DIV>
+<DIV id="rightLinks">
+<DIV id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml" 
+data-fragmentname="CenterLinks1">
+<DIV class="linkList">
+<DIV class="linkListTitle">Recursos de aprendizagem</DIV>
+<UL class="links">
+  <LI><A id="CenterLinks1_2151_4" href="http://www.microsoftvirtualacademy.com/" 
+  xmlns="http://www.w3.org/1999/xhtml">Microsoft Virtual Academy</A>       </LI>
+  <LI><A id="CenterLinks1_2151_5" href="http://channel9.msdn.com/" xmlns="http://www.w3.org/1999/xhtml">Channel 
+  9</A>       </LI>
+  <LI><A id="CenterLinks1_2151_7" href="https://msdn.microsoft.com/magazine/" 
+  xmlns="http://www.w3.org/1999/xhtml">MSDN Magazine</A>       
+</LI></UL></DIV></DIV>
+<DIV id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml" 
+data-fragmentname="CenterLinks2">
+<DIV class="linkList">
+<DIV class="linkListTitle">Comunidade</DIV>
+<UL class="links">
+  <LI><A id="CenterLinks2_2151_8" href="https://social.msdn.microsoft.com/forums/pt-br/home" 
+  xmlns="http://www.w3.org/1999/xhtml">Fóruns</A>       </LI>
+  <LI><A id="CenterLinks2_2151_9" href="http://blogs.msdn.com/b/developer-tools/" 
+  xmlns="http://www.w3.org/1999/xhtml">Blogs</A>       </LI>
+  <LI><A id="CenterLinks2_2151_10" href="http://www.codeplex.com/" xmlns="http://www.w3.org/1999/xhtml">Codeplex</A> 
+        </LI>
+  <LI><A id="CenterLinks2_2151_21" href="https://technet.microsoft.com/pt-br/mt652115" 
+  xmlns="http://www.w3.org/1999/xhtml">Open Source</A>       
+</LI></UL></DIV></DIV>
+<DIV id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml" 
+data-fragmentname="CenterLinks3">
+<DIV class="linkList">
+<DIV class="linkListTitle">Suporte</DIV>
+<UL class="links">
+  <LI><A id="CenterLinks3_2151_11" href="https://msdn.microsoft.com/hh361695" 
+  xmlns="http://www.w3.org/1999/xhtml">Suporte autônomo</A>       
+</LI></UL></DIV></DIV>
+<DIV id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml" 
+data-fragmentname="CenterLinks4">
+<DIV class="linkList">
+<DIV class="linkListTitle">Programas</DIV>
+<UL class="links">
+  <LI><A id="CenterLinks4_2151_13" href="https://www.microsoft.com/bizspark/" 
+  xmlns="http://www.w3.org/1999/xhtml">BizSpark (para iniciantes)</A>       
+</LI>
+  <LI><A id="CenterLinks4_2151_14" href="https://www.dreamspark.com/" xmlns="http://www.w3.org/1999/xhtml">DreamSpark</A> 
+        </LI>
+  <LI><A id="CenterLinks4_2151_17" href="http://www.imaginecup.com/" xmlns="http://www.w3.org/1999/xhtml">Imagine 
+  Cup</A>       </LI></UL></DIV></DIV></DIV></FOOTER><FOOTER class="bottom"><SPAN 
+class="localeContainer">
+<FORM class="selectLocale" id="selectLocaleForm" action="https://msdn.microsoft.com/pt-br/selectlocale-dmc"><INPUT name="fromPage" type="hidden" value="https%3a%2f%2fmsdn.microsoft.com%2fpt-br%2flibrary%2fms182240.aspx"> 
+        <A title="Altere seu idioma" onclick="$('#selectLocaleForm').submit();return false;" 
+href="https://msdn.microsoft.com/library/ms182240.aspx#">Brasil (Português)</A>  
+   </FORM></SPAN>
+<DIV id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml" 
+data-fragmentname="BottomLinks">
+<DIV class="linkList">
+<UL class="links horizontal">
+  <LI><A id="BottomLinks_2148_7" href="https://msdn.microsoft.com/newsletter.aspx" 
+  xmlns="http://www.w3.org/1999/xhtml">Boletim informativo</A>       </LI>
+  <LI><A id="BottomLinks_2148_8" href="https://msdn.microsoft.com/dn529288" 
+  xmlns="http://www.w3.org/1999/xhtml">Privacidade &amp; cookies</A>       </LI>
+  <LI><A id="BottomLinks_2148_9" href="https://msdn.microsoft.com/cc300389" 
+  xmlns="http://www.w3.org/1999/xhtml">Termos de uso</A>       </LI>
+  <LI><A id="BottomLinks_2148_10" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" 
+  xmlns="http://www.w3.org/1999/xhtml">Marcas comerciais</A>       
+</LI></UL></DIV></DIV><SPAN class="logoLegal"><SPAN class="logo"></SPAN><SPAN 
+class="copyright">© 2016 Microsoft</SPAN>             
+</SPAN></FOOTER></DIV></DIV>
+<DIV class="footerPrintView">
+<DIV class="footerCopyrightPrintView">© 2016 Microsoft</DIV></DIV><INPUT id="tocPaddingPerLevel" type="hidden" value="17"> 
+        <INPUT id="MtpsDevice" type="hidden" value="Default"> <!--[CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]--> 
+                                            <!--[CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]--> 
+<DIV 
+id="globalRequestVerification"><INPUT name="__RequestVerificationToken" type="hidden" value="mTvbVtK-qkLwa8jStrLE2FJ-rKUExk1DeJWgwCwVFNhXBeV_EOS5jyojPN4HrWL6--DY4DXv4lXQzq53iwAVbD2-s201"> 
+</DIV></DIV>
+<SCRIPT class="mtps-injected" type="text/javascript">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://msdn.microsoft.com\", \r\n\t\"js\": \"https://msdn.microsoft.com\", \r\n\t\"css\": \"https://msdn.microsoft.com\", \r\n\t\"xap\": \"https://msdn.microsoft.com\"\r\n});\r\n/**/" },
+	{ txt: "//\n\n        window.appInsightsId = \u00275eb1b2eb-c47a-497a-a7ac-a1c230b2882f\u0027;\n        //" },
+	{ url: "https://msdn.microsoft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:Breadcrumbs,4:LibraryRightNavigationMenu,4:PrintExportButton,5:StandardRating,2:Footer,0:Topic,0:AppInsightsPerf,3:ResponsiveToc,0:ABTestControl,4:WEDCS,3:CmpgrpForHeader,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Global/Content:5\u0026amp;hashKey=B5F7D40C62EAE13EAD28F72217F566AA\u0026amp;v=D93D362BB41A541D1467F281DFDA0590" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=pt-br\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Pesquisar no MSDN" },
+	{ url: "https://msdn.microsoft.com/Areas/Epx/Themes/Base/Content/JumpRedirect.js" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expandir\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Recolher\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Clique para expandir. Clique duas vezes para expandir tudo.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Clique para recolher. Clique duas vezes para recolher tudo.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expandir Tudo\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Recolher Tudo\u0027;" },
+	{ url: "https://msdn.microsoft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,0:ResponsiveSupport,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=47E182D3D8C308F8FDBFA84F991BBB2F\u0026amp;v=D93D362BB41A541D1467F281DFDA0590" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+</SCRIPT>
+ </BODY></HTML>
